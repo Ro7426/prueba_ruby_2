@@ -12,14 +12,14 @@
     array = read_alum('alumnos.csv')
     array.each_with_index do |elemento, index|
         suma = 0
-        acc = 0
+        contador = 0
         elemento.each_with_index do |ele, index|
             if index != 0
                 suma += ele.to_f
-                acc += 1
+                contador += 1
             end
         end
-        puts "Alumno: #{elemento[0]} --promedio : #{suma.to_f/acc} " 
+        puts "Alumno: #{elemento[0]} --promedio : #{suma.to_f/contador} " 
     end
 end
 
@@ -28,13 +28,13 @@ end
 def inasistencia_alumnos
     array = read_alum('alumnos.csv')
     array.each_with_index do |elemento,index|
-        acc = 0
+        contador = 0
         elemento.each_with_index do |ele|
             if ele == 'A'
-                acc += 1
+                contador += 1
             end
         end
-        puts "Alumno: #{elemento[0]} --inasistencias : #{acc} " 
+        puts "Alumno: #{elemento[0]} --inasistencias : #{contador} " 
     end
 end
 
@@ -45,14 +45,17 @@ def alumnos_aprobados
     array = read_alum('alumnos.csv')
     array.each_with_index do |elemento, index|
         suma = 0
-        acc = 0
+        contador = 0
         elemento.each_with_index do |ele, index|
-            if index = index != 0
+            if index != 0
                 suma += ele.to_f
-                acc += 1
+                contador += 1
             end
         end
-        puts "Alumno: #{elemento[0]} --aprobado? : #{suma.to_f/acc >= 5} " 
+        promedio = suma.to_f/contador
+        
+        puts "Alumno: #{elemento[0]} aprobado : #{suma.to_f/contador} " if promedio >= 5
+        
     end
 end
 
