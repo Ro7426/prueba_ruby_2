@@ -53,9 +53,10 @@ def alumnos_aprobados
             end
         end
         promedio = suma.to_f/contador
+        if promedio >= 5
         
-        puts "Alumno: #{elemento[0]} aprobado : #{suma.to_f/contador} " if promedio >= 5
-        
+        puts "Alumno: #{elemento[0]} aprobado : #{suma.to_f/contador} " 
+        end
     end
 end
 
